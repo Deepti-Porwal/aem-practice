@@ -1,0 +1,23 @@
+<div>
+<h1> My Profile Details Component!!! </h1>
+<div data-sly-use.model="com.adobe.aem.practice.site.core.models.Profile"></div>
+<img src="${model.profilePic}" />
+
+<h2>${model.name}</h2>
+
+<p>Role: ${model.role}</p>
+
+<p>Gender: ${model.gender}</p>
+
+<p>Join Date: ${model.joinDate}</p>
+
+<ul data-sly-list.skill="${model.skills}">
+    <li>${skill}</li>
+</ul>
+Experiences::
+    <ul data-sly-list.exp="${model.experiences}">
+        <li>${exp.companyName}</li>
+        <li>${exp.startDate}</li>
+        <li>${exp.endDate}</li>
+    </ul>
+</div>

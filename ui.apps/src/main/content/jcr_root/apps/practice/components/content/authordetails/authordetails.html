@@ -1,0 +1,14 @@
+<h1> My Author Details Component!!! </h1>
+<div data-sly-use.author="${'com.adobe.aem.practice.site.core.models.Author' @ myAttribute='Test Attribute Passed by User'}"></div>
+
+<div>First Name :  ${author.firstName} </div>
+<div>Lasr Name :  ${author.lastName}   </div>
+<div>Is Professor:  ${author.profession}  </div>
+<div>Current Page Title:  ${author.pageTitle}  </div>
+<div>Request Attribute Passed:  ${author.requestAttribute}  </div>
+<div>Resource Path:  ${author.resourceName}  </div>
+<div>Getting cq:lastModified using @Named:  ${author.lastModified}  </div>
+<div>Getting Books in list::::
+<ul data-sly-list.item="${author.bookDetails}">
+    <li>${item}</li>
+</ul></div>
