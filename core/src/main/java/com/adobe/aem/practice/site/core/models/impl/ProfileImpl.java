@@ -79,7 +79,5 @@ private static final Logger LOG = LoggerFactory.getLogger(ProfileImpl.class);
     @PostConstruct
     protected void init() {
     LOG.debug("image path:: {}",profilePic);
-    LOG.debug("Child Resource:: {}",experiences.get(0));
-    LOG.debug("Name:{}, Role :{}, Gender : {}, Join Date : {}, Skills :{}",name,role,gender,joinDate, skills.get(0));
     }
 }

@@ -75,7 +75,7 @@
 
                     <profilePic
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                             fieldLabel="Profile Picture"
                             name="./profilePic"
                             autoStart="{Boolean}true"

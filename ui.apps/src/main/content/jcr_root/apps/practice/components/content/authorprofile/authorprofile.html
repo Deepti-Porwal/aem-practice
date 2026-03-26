@@ -1,0 +1,27 @@
+<div data-sly-test="${wcmmode.edit}">
+    <h2>Author Profile Component</h2>
+</div>
+<div>
+    <sly data-sly-use.model="com.adobe.aem.practice.site.core.models.AuthorProfile" />
+<div class="author-card">
+
+    <div class="author-image">
+        <img src="${model.fileReference}" alt="${model.authorName}" />
+    </div>
+
+    <div class="author-content">
+        <h3>${model.authorName}</h3>
+
+        <p>${model.authorDescription}</p>
+
+        <a data-sly-test="${model.ctaLink}"
+           href="${model.ctaLink}"
+           class="author-cta">
+            ${model.ctaText}
+
+        </a>
+
+    </div>
+
+</div>
+</div>
