@@ -1,0 +1,27 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <div>
+        <h1>Teasers Component</h1>
+    </div>
+</sly>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.TeaserList"/>
+
+<div class="teaser-list">
+
+    <div data-sly-list.item="${model.teasers}">
+
+        <div class="teaser-item">
+
+            <img src="${item.image}" alt="${item.title}"/>
+
+            <h3>${item.title}</h3>
+
+            <p>${item.description}</p>
+
+            <a href="${item.link}">
+                Read More
+            </a>
+
+        </div>
+
+</div>
+</div>

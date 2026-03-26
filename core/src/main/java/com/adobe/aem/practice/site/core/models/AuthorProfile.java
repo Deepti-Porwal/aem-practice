@@ -10,4 +10,6 @@ public interface AuthorProfile {
     public String getCtaText();
 
     public String getCtaLink();
+
+    public boolean isOpenInNewTab();
 }

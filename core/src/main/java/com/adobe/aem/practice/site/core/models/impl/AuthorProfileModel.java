@@ -3,6 +3,7 @@ package com.adobe.aem.practice.site.core.models.impl;
 import com.adobe.aem.practice.site.core.models.AuthorProfile;
 import com.adobe.aem.practice.site.core.models.Profile;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Optional;
@@ -37,6 +38,10 @@ public class AuthorProfileModel implements AuthorProfile {
     @Optional
     private String ctaLink;
 
+    @ValueMapValue
+    @Default(values = "true")
+    private boolean openInNewTab;
+
     public String getAuthorName() {
         return authorName;
     }
@@ -60,9 +65,14 @@ public class AuthorProfileModel implements AuthorProfile {
         return ctaLink;
     }
 
+    @Override
+    public boolean isOpenInNewTab() {
+        return openInNewTab;
+    }
+
     @PostConstruct
     protected void init() {
-            LOG.debug("Inside AuthorProfileModel:: Name: {}, Description: {}, CTA Text : {}, CTA Link: {}, Image Path:{}",authorName, authorDescription, ctaText,ctaLink, fileReference);
+            LOG.debug("Inside AuthorProfileModel:: Name: {}, Description: {}, CTA Text : {}, CTA Link: {}, Image Path:{}, New Tab:{}",authorName, authorDescription, ctaText,ctaLink, fileReference, openInNewTab);
         if (ctaText == null) {
             ctaText = "View Profile";
         }

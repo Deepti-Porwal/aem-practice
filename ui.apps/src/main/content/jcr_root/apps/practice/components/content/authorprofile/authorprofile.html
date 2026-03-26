@@ -16,6 +16,7 @@
 
         <a data-sly-test="${model.ctaLink}"
            href="${model.ctaLink}"
+           target="${model.isOpenInNewTab ? '_blank' : '_self'}"
            class="author-cta">
             ${model.ctaText}
 
