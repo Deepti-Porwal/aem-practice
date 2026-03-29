@@ -1,0 +1,31 @@
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.CustomAccordionImpl"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.css @ categories='practice.customaccordion'}"/>
+<sly data-sly-call="${clientlib.js @ categories='practice.customaccordion'}"/>
+
+<div class="cmp-accordion">
+Some Text
+    <div data-sly-list.item="${model.accordionItems}"
+         class="cmp-accordion__item ${item.expanded ? 'is-open' : ''}">
+
+        <button class="cmp-accordion__header"
+                aria-expanded="${item.expanded}">
+
+            <span class="cmp-accordion__title">
+                ${item.title}
+            </span>
+
+            <span class="cmp-accordion__icon"></span>
+
+        </button>
+
+        <div class="cmp-accordion__panel">
+            <div class="cmp-accordion__content">
+                ${item.description}
+            </div>
+        </div>
+
+    </div>
+
+</div>

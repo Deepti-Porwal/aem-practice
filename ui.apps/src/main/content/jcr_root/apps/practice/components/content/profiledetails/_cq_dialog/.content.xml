@@ -1,133 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-          xmlns:cq="http://www.day.com/jcr/cq/1.0"
-          xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-          jcr:primaryType="nt:unstructured"
-          jcr:title="Properties"
-          sling:resourceType="cq/gui/components/authoring/dialog">
-
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
-
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
         <items jcr:primaryType="nt:unstructured">
-
             <column
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/container">
-
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-
                     <name
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                            fieldLabel="Name"
-                            name="./name"/>
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Name"
+                        name="./name"/>
                     <role
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                            fieldLabel="Role"
-                            name="./role">
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Role"
+                        name="./role">
                         <items jcr:primaryType="nt:unstructured">
-
                             <author
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Author"
-                                    value="author"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                text="Author"
+                                value="author"/>
                             <editor
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Editor"
-                                    value="editor"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                text="Editor"
+                                value="editor"/>
                         </items>
                     </role>
-
                     <gender
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
-                            fieldLabel="Gender"
-                            name="./gender">
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                        fieldLabel="Gender"
+                        name="./gender">
                         <items jcr:primaryType="nt:unstructured">
-
                             <male
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Male"
-                                    value="male"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                text="Male"
+                                value="male"/>
                             <female
-                                    jcr:primaryType="nt:unstructured"
-                                    text="Female"
-                                    value="female"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                text="Female"
+                                value="female"/>
                         </items>
                     </gender>
-
                     <joinDate
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-                            fieldLabel="Join Date"
-                            name="./joinDate"/>
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                        fieldLabel="Join Date"
+                        name="./joinDate"/>
                     <profilePic
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                            fieldLabel="Profile Picture"
-                            name="./profilePic"
-                            autoStart="{Boolean}true"
-                            allowUpload="{Boolean}true"/>
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        allowUpload="{Boolean}true"
+                        autoStart="{Boolean}true"
+                        fieldLabel="Profile Picture"
+                        name="./profilePic"/>
                     <skills
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                            fieldLabel="Skills">
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Skills">
                         <field
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                name="./skills"/>
-
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            name="./skills"/>
                     </skills>
-                    <!-- Previous Experience Multifield -->
                     <previousExperience
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                            composite="{Boolean}true"
-                            fieldLabel="Previous Experience"
-                    >
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Previous Experience">
                         <field
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/container"
-                                name="./prevExperiences">
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./prevExperiences">
                             <items jcr:primaryType="nt:unstructured">
                                 <companyName
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                        fieldLabel="Company Name"
-                                        name="./companyName"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Company Name"
+                                    name="./companyName"/>
                                 <startDate
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-                                        fieldLabel="Start Date"
-                                        name="./startDate"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="Start Date"
+                                    name="./startDate"/>
                                 <endDate
-                                        jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
-                                        fieldLabel="End Date"
-                                        name="./endDate"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                    fieldLabel="End Date"
+                                    name="./endDate"/>
                             </items>
                         </field>
                     </previousExperience>
                 </items>
-
             </column>
-
         </items>
-
     </content>
-
 </jcr:root>

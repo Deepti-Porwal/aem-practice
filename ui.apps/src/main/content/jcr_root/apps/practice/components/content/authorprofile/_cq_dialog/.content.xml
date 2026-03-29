@@ -1,78 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root
-        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-        xmlns:cq="http://www.day.com/jcr/cq/1.0"
-        xmlns:jcr="http://www.jcp.org/jcr/1.0"
-        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-        jcr:primaryType="nt:unstructured"
-        jcr:title="Author Profile"
-        sling:resourceType="cq/gui/components/authoring/dialog">
-
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Author Profile"
+    sling:resourceType="cq/gui/components/authoring/dialog">
     <content
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="granite/ui/components/coral/foundation/container">
-
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-
             <columns
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
-
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                 <items jcr:primaryType="nt:unstructured">
-
                     <column
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/container">
-
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
                         <items jcr:primaryType="nt:unstructured">
-
                             <name
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="Author Name"
-                                    name="./authorName"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Author Name"
+                                name="./authorName"/>
                             <description
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
-                                    fieldLabel="Description"
-                                    name="./authorDescription"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Description"
+                                name="./authorDescription"/>
                             <image
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldLabel="Profile Image"
-                                    name="./fileReference"
-                                    rootPath="/content/dam"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Profile Image"
+                                name="./fileReference"
+                                rootPath="/content/dam"/>
                             <ctaText
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                    fieldLabel="CTA Text"
-                                    name="./ctaText"/>
-
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="CTA Text"
+                                name="./ctaText"/>
                             <ctaLink
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    fieldLabel="CTA Link"
-                                    name="./ctaLink"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="CTA Link"
+                                name="./ctaLink"/>
                             <openInNewTab
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                text="Open in new tab"
                                 name="./openInNewTab"
-                                value="{Boolean}true"
-                                uncheckedValue="{Boolean}false"/>
+                                text="Open in new tab"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
                         </items>
-
                     </column>
-
                 </items>
-
             </columns>
-
         </items>
-
     </content>
-
 </jcr:root>
