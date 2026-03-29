@@ -1,0 +1,25 @@
+.cmp-tabs__nav {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.cmp-tabs__tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.cmp-tabs__tab.is-active {
+  border-bottom: 3px solid black;
+  font-weight: 600;
+}
+
+.cmp-tabs__panel {
+  display: none;
+  padding: 20px 0;
+}
+
+.cmp-tabs__panel.is-active {
+  display: block;
+}

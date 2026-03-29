@@ -1,0 +1,25 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <h1>Tabs Custom Component</h1>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.tabs'}"/>
+<sly data-sly-call="${clientlib.js @ categories='practice.tabs'}"/>
+<div data-sly-use.model="com.adobe.aem.practice.site.core.models.TabsImpl">
+    <div class="cmp-tabs">
+<div class="cmp-tabs__nav">
+<button
+    type="button"
+    data-sly-repeat.tab="${model.tabsdetails}"
+    class="cmp-tabs__tab ${tabList.index == 0 ? 'is-active' : ''}">
+    ${tab.title}
+</button>
+</div>
+<div class="cmp-tabs__panels">
+    <div
+        data-sly-repeat.panel="${model.tabsdetails}"
+        class="cmp-tabs__panel ${panelList.index == 0 ? 'is-active' : ''}">
+        ${panel.content}
+    </div>
+</div>
+</div>
+</div>
