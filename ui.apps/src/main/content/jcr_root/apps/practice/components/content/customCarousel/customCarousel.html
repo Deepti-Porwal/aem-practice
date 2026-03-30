@@ -1,0 +1,27 @@
+<sly data-sly-test="${wcmmode.edit}">
+    <h1>Carousel Custom Component</h1>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.carousel'}"/>
+<sly data-sly-call="${clientlib.js @ categories='practice.carousel'}"/>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.CarouselImpl"/>
+<div class="cmp-carousel">
+    <div class="cmp-carousel__slides">
+        <div class="cmp-carousel__slide ${slideList.index == 0 ? 'active' : ''}"
+             data-sly-repeat.slide="${model.slides}">
+
+            Slides::${slide.title}
+            <img src="${slide.image}" alt="${slide.title}" />
+            <div class="cmp-carousel__content">
+                <h2>${slide.title}</h2>
+                <p>${slide.description}</p>
+                <a href="${slide.link}"
+                   target="${slide.openInNewTab ? '_blank' : '_self'}">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+    <button class="cmp-carousel__prev">‹ Previous</button>
+    <button class="cmp-carousel__next">› Next </button>
+</div>

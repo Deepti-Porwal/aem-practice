@@ -1,0 +1,31 @@
+.cmp-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.cmp-carousel__slide {
+  display: none;
+}
+
+.cmp-carousel__slide.active {
+  display: block;
+}
+
+.cmp-carousel img {
+  width: 100%;
+}
+
+.cmp-carousel__prev,
+.cmp-carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cmp-carousel__prev { left: 10px; }
+.cmp-carousel__next { right: 10px; }
