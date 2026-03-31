@@ -1,0 +1,30 @@
+.cmp-card-list__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cmp-card {
+  border: 1px solid #eee;
+  padding: 16px;
+  background: white;
+  transition: 0.3s;
+}
+
+.cmp-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cmp-card img {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.cmp-card__cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: white;
+  background: black;
+  padding: 8px 14px;
+  text-decoration: none;
+}

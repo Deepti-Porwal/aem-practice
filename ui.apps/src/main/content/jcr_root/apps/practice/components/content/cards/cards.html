@@ -1,0 +1,41 @@
+<sly data-sly-test="${wcmmode.edit}">
+    Cards Component
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.cards'}"/>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.CardsImpl"/>
+
+<div class="cmp-card-list">
+
+    <div class="cmp-card-list__grid">
+
+        <div class="cmp-card"
+             data-sly-repeat.card="${model.cards}">
+
+            <div class="cmp-card__image"
+                 data-sly-test="${!card.hideImage && card.image}">
+                <img src="${card.image}" alt="${card.title}" />
+            </div>
+
+            <div class="cmp-card__content">
+
+                <h3>${card.title}</h3>
+
+                <p>${card.description}</p>
+
+                <a class="cmp-card__cta"
+                   data-sly-test="${card.link}"
+                   href="${card.link}"
+                   target="${card.openInNewTab ? '_blank' : '_self'}">
+
+                    ${card.ctaText || 'Learn More'}
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
