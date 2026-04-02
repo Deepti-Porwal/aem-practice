@@ -1,0 +1,32 @@
+<sly data-sly-test="${wcmmode.edit}">
+    Header Navigation Custom Component
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.headerNavigation'}"/>
+<sly data-sly-call="${clientlib.js @ categories='practice.headerNavigation'}"/>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.HeaderNavImpl"/>
+<button class="cmp-header__toggle">
+    ☰
+</button>
+<nav class="cmp-header">
+    <ul class="cmp-header__menu">
+        <li data-sly-repeat.item="${model.items}"
+            class="${item.active ? 'active' : ''}">
+            <a href="${item.path}">
+                ${item.title}
+            </a>
+            <span data-sly-test="${item.children}" class="cmp-header__arrow">
+    ▼
+</span>
+            <ul data-sly-test="${item.children}"
+                class="cmp-header__submenu">
+                <li data-sly-repeat.child="${item.children}"
+                    class="${child.active ? 'active' : ''}">
+                    <a href="${child.path}">
+                        ${child.title}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

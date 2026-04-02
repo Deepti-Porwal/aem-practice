@@ -1,0 +1,20 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.js @ categories='practice.search'}"/>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.SearchModel"/>
+
+<div class="search-component">
+
+    <input
+            type="text"
+            id="searchInput"
+            data-root="${model.searchRoot}"
+            data-limit="${model.limit}"
+            data-highlight="${model.highlight}"
+            data-pagination="${model.pagination}"
+            data-sort="${model.sortBy}"
+            placeholder="Search..."
+    />
+
+    <div id="searchResults"></div>
+
+</div>
