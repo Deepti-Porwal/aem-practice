@@ -1,0 +1,12 @@
+{
+  "siteName": "AEM Practice Site",
+  "siteLogoPath": "/content/dam/aem-practice/images/logo.png",
+  "cdnBaseUrl": "https://cdn.aempractice.com",
+  "googleAnalyticsId": "G-XXXXXXXXXX",
+  "cookieConsentEndpoint": "https://consent.aempractice.com/api/v1",
+  "socialLinks": [
+    "Twitter:https://twitter.com/aempractice",
+    "LinkedIn:https://linkedin.com/company/aempractice"
+  ],
+  "maintenanceMode": false
+}

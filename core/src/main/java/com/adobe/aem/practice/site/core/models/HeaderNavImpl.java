@@ -1,11 +1,13 @@
 package com.adobe.aem.practice.site.core.models;
 
+import com.adobe.aem.practice.site.core.services.GlobalSiteConfigService;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -16,11 +18,14 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 @Model(adaptables = SlingHttpServletRequest.class,
 defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeaderNavImpl {
 
+    @OSGiService
+    private GlobalSiteConfigService globalSiteConfigService;
     @Self
     private SlingHttpServletRequest request;
 
@@ -40,9 +45,26 @@ public class HeaderNavImpl {
         return items;
     }
 
+    private String siteName;
+    private String logoPath;
+    private String googleAnalyticsId;
+    private boolean maintenanceMode;
+    //private Map<String, String> socialLinks;
+    private List<SocialLink> socialLinks;
+
     @PostConstruct
     protected void init() {
         LOG.debug("HeaderNavImpl INIT START");
+        siteName          = globalSiteConfigService.getSiteName();
+        logoPath          = globalSiteConfigService.getSiteLogoPath();
+        googleAnalyticsId = globalSiteConfigService.getGoogleAnalyticsId();
+        maintenanceMode   = globalSiteConfigService.isMaintenanceMode();
+        socialLinks = globalSiteConfigService.getSocialLinkList();
+        //socialLinks       = globalSiteConfigService.getSocialLinks();
+
+
+        LOG.debug("HeaderNavigationModel init — site={}, logoPath={}, maintenanceMode={}",
+                siteName, logoPath, maintenanceMode);
         items = new ArrayList<>();
         try {
             LOG.debug("Request object :: {}", request);
@@ -107,4 +129,24 @@ public class HeaderNavImpl {
             LOG.debug("HEADER NAV CRASH", e);
         }
     }
+
+    // ── Getters (expose to HTL via the interface) ─────────────────────────
+
+    public String getSiteName() {
+        return siteName;
+    }
+
+    public String getLogoPath() {
+        return logoPath;
+    }
+
+    public String getGoogleAnalyticsId() {
+        return googleAnalyticsId;
+    }
+
+    public boolean isMaintenanceMode() {
+        return maintenanceMode;
+    }
+    public List<SocialLink> getSocialLinks() { return socialLinks; }
+
 }

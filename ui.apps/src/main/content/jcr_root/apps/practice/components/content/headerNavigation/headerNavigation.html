@@ -5,6 +5,44 @@
 <sly data-sly-call="${clientlib.css @ categories='practice.headerNavigation'}"/>
 <sly data-sly-call="${clientlib.js @ categories='practice.headerNavigation'}"/>
 <sly data-sly-use.model="com.adobe.aem.practice.site.core.models.HeaderNavImpl"/>
+<!-- Maintenance mode gate — any component can check this -->
+<sly data-sly-test="${model.maintenanceMode}">
+    <div class="site-maintenance-banner">
+        ${model.siteName} is currently undergoing maintenance.
+    </div>
+</sly>
+
+<header data-sly-test="${!model.maintenanceMode}" class="site-header">
+
+    <!-- Logo — path already CDN-resolved by the service -->
+    <a href="/" class="site-logo">
+        <img src="${model.logoPath @ context='uri'}"
+             alt="${model.siteName @ context='text'}" />
+    </a>
+
+    <!-- Site name -->
+    <span class="site-name">${model.siteName @ context='text'}</span>
+
+    <!-- Social links — iterated from the parsed map -->
+    <nav class="social-links" data-sly-test="${model.socialLinks}">
+        <sly data-sly-list.link="${model.socialLinks}">
+            <a href="${link.url @ context='uri'}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="social-link">
+                ${link.label @ context='text'}
+            </a>
+        </sly>
+    </nav>
+
+    <!-- GA script — only rendered when ID is configured (publish only) -->
+    <sly data-sly-test="${model.googleAnalyticsId}">
+        <script async
+                src="https://www.googletagmanager.com/gtag/js?id=${model.googleAnalyticsId @ context='uri'}">
+        </script>
+    </sly>
+
+
 <button class="cmp-header__toggle">
     ☰
 </button>
@@ -30,3 +68,7 @@
         </li>
     </ul>
 </nav>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.PageInfoModel"/>
+<h1>Fetching the title and Description of Page using OSGi Service </h1>
+<h1>${model.title}</h1>
+    <p>${model.description}</p></header>
