@@ -19,4 +19,12 @@ public @interface SchedulerConfiguration {
             description = "Cron expression used by the scheduler",
             type = AttributeType.STRING)
     public String cronExpression() default "0/20 * * * * ?"; // runs every 10 seconds
+
+    @AttributeDefinition(
+            name = "Scheduler Enabled",
+            description = "Enable Scheduler",
+            type = AttributeType.BOOLEAN)
+ //   boolean enabled();
+
+    boolean enabled();
 }

@@ -1,0 +1,18 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.aiherobanner'}"/>
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.AIHeroBanner"/>
+AI Hero Banner Component!
+
+<div class="ai-hero-banner" style="background-image: url('${model.backgroundImage @ context='uri'}');">
+
+
+    <div class="ai-hero-banner__overlay" ></div>
+    <div class="ai-hero-banner__content">
+        <h1 class="ai-hero-banner__title">${model.title}</h1>
+        <p class="ai-hero-banner__subtitle" data-sly-test="${model.subtitle}">${model.subtitle}</p>
+        
+            <a class="ai-hero-banner__button" data-sly-test="${model.ctaLink}"
+               href="${model.ctaLink}">${model.ctaText}</a>
+         
+    </div>
+</div>

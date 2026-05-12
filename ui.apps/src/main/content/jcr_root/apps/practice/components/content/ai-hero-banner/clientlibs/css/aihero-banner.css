@@ -1,0 +1,57 @@
+.ai-hero-banner {
+    position: relative;
+    padding: 6rem 2rem;
+    color: #111111;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.ai-hero-banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(179, 241, 221, 0.65);
+}
+
+.ai-hero-banner__content {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.ai-hero-banner__title {
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    line-height: 1.02;
+    margin: 0 0 1rem;
+}
+
+.ai-hero-banner__subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0 0 2rem;
+}
+
+.ai-hero-banner__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.ai-hero-banner__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    background: #111111;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+.ai-hero-banner__button:hover,
+.ai-hero-banner__button:focus {
+    opacity: 0.9;
+}
