@@ -1,0 +1,37 @@
+<!--/* Component: article-teaser */-->
+<sly data-sly-use.model="com.adobe.aem.practice.site.core.models.ArticleTeaserModel"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.css @ categories='practice.article-teaser'}"/>
+
+<sly data-sly-test="${model.hasContent}">
+    <article class="cmp-article-teaser" data-cmp-is="article-teaser">
+        <a class="cmp-article-teaser__link" href="${model.articleUrl}">
+            <div class="cmp-article-teaser__image-wrapper" data-sly-test="${model.featuredImagePath}">
+                <img class="cmp-article-teaser__image"
+                     src="${model.featuredImagePath}"
+                     alt="${model.title @ context='attribute'}"
+                     data-sly-attribute.width="${model.imageWidth}"
+                     data-sly-attribute.height="${model.imageHeight}"
+                     data-sly-attribute.data-format="${model.imageFormat}"/>
+            </div>
+            <div class="cmp-article-teaser__content">
+                <h2 class="cmp-article-teaser__title">${model.title}</h2>
+                <div class="cmp-article-teaser__meta">
+                    <span class="cmp-article-teaser__date" data-sly-test="${model.lastModifiedDate}">
+                        ${model.lastModifiedDate}
+                    </span>
+                    <span class="cmp-article-teaser__reading-time"
+                          data-sly-test="${model.showReadingTime && model.readingTimeLabel}">
+                        ${model.readingTimeLabel}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </article>
+</sly>
+
+<sly data-sly-test="${!model.hasContent && wcmmode.edit}">
+    <div class="cmp-article-teaser cmp-article-teaser--empty">
+        Please configure the Article Teaser component or select an article page.
+    </div>
+</sly>

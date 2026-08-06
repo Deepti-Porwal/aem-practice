@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Article Teaser"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <articlePath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldDescription="Leave empty to use the current page as the article source."
+                fieldLabel="Article Path"
+                name="./articlePath"
+                rootPath="/content"/>
+            <overrideTitle
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldDescription="Optional custom title. Falls back to the article page jcr:title when empty."
+                fieldLabel="Override Title"
+                name="./overrideTitle"/>
+            <showReadingTime
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                fieldDescription="Display estimated reading time based on page content."
+                fieldLabel="Show Reading Time"
+                name="./showReadingTime"
+                text="Show reading time"
+                value="{Boolean}true"/>
+        </items>
+    </content>
+</jcr:root>
